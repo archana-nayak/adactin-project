@@ -42,6 +42,10 @@ public class Core {
 		return this.log;
 	}
 
+	public String getProp(String propName) {
+		return AutoBasics.getProp(propName, "src/main/resources/", "config.properties", getLog());
+	}
+
 	public boolean present(By by) {
 
 		return AutoBasics.isElementPresent(this.getDriver(), by);
@@ -67,8 +71,8 @@ public class Core {
 	 * 
 	 * @return
 	 */
-	public boolean takeScreenShots() {
-		return AutoBasics.takeScreenShots(getDriver(), "screenshots/", "Auto Test " + this.currItem++, getLog());
+	public boolean takeScreenShot() {
+		return AutoBasics.takeScreenShot(getDriver(), "screenshots/", "Auto Test " + this.currItem++, getLog());
 	}
 
 	/**
@@ -76,8 +80,13 @@ public class Core {
 	 * @param fileName
 	 * @return
 	 */
-	public boolean takeScreenShots(String fileName) {
-		return AutoBasics.takeScreenShots(this.getDriver(), "screenshots/", fileName, getLog());
+	public boolean takeScreenShot(String fileName) {
+		return AutoBasics.takeScreenShot(this.getDriver(), "screenshots/", fileName, getLog());
+	}
+
+	public boolean writeProp(String propName, String value) {
+		return AutoBasics.writeProp(propName, value, "Configuration Properties File", "src/main/resources/",
+				"config.properties", getLog());
 	}
 
 }
