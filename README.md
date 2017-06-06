@@ -1,5 +1,5 @@
-# Basic Project
-## Basic Project Structure
+# Adactin Test Hotel Checkin Project
+## Hotel Checking Website Test Project Structure
 
 *Default Structure for A Basic Project*
 
